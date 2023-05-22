@@ -29,7 +29,7 @@ export const App = () => {
         i.number === contact.number
     );
     enterContacts
-      ? alert(`${name} or ${number} is already in contacts`)
+      ? alert(`${name} is already in contacts`)
       : setContacts([contact, ...contacts]);
   };
 
@@ -46,7 +46,6 @@ export const App = () => {
   const deleteContact = id => {
     setContacts(contacts.filter(contact => contact.id !== id));
     setFilter('');
-    console.log('Alina');
   };
 
   return (
