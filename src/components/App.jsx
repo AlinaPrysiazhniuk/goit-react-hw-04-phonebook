@@ -28,9 +28,12 @@ export const App = () => {
           i.number === contact.number) ||
         i.number === contact.number
     );
-    enterContacts
-      ? alert(`${name} is already in contacts`)
-      : setContacts([contact, ...contacts]);
+    if (enterContacts) {
+      console.log('sdsdsd');
+      alert(`${name} is already in contacts`);
+    } else {
+      setContacts([contact, ...contacts]);
+    }
   };
 
   const changeFilterInput = e => {
@@ -42,7 +45,6 @@ export const App = () => {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
-
   const deleteContact = id => {
     setContacts(contacts.filter(contact => contact.id !== id));
     setFilter('');
