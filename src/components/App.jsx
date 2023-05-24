@@ -22,18 +22,11 @@ export const App = () => {
       number,
     };
 
-    const enterContacts = contacts.some(
-      i =>
-        (i.name === contact.name.toLowerCase() &&
-          i.number === contact.number) ||
-        i.number === contact.number
-    );
-    if (enterContacts) {
-      console.log('sdsdsd');
-      alert(`${name} is already in contacts`);
-    } else {
-      setContacts([contact, ...contacts]);
-    }
+    contacts.some(
+      i => i.name.toLowerCase() === name.toLowerCase() || i.number === number
+    )
+      ? alert(`Contact with name ${name} or ${number} is already in contacts`)
+      : setContacts([contact, ...contacts]);
   };
 
   const changeFilterInput = e => {
